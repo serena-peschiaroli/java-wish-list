@@ -6,11 +6,14 @@ public class Present implements Comparable<Present>{
     String name;
     double price;
 
+    //costrutture
     public Present(String name, double price) {
+        validateString(name, "name");
+        validatePrice(price, "price");
         this.name = name;
         this.price = price;
     }
-
+    //getters$ setters
     public String getName() {
         return name;
     }
@@ -26,7 +29,7 @@ public class Present implements Comparable<Present>{
     public void setPrice(double price) {
         this.price = price;
     }
-
+    //override
     @Override
     public String toString() {
         return "Present{" +
@@ -47,9 +50,26 @@ public class Present implements Comparable<Present>{
     public int hashCode() {
         return Objects.hash(getName(), getPrice());
     }
-
+    //compare to override
     @Override
     public int compareTo(Present other) {
         return this.name.compareTo(other.name);
     }
+
+    //metodi
+
+    //metodo che solleva un'eccezione se la stringa è null o empty
+    private void validateString(String value, String field) throws IllegalArgumentException {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException(field + " is null or empty");
+        }
+    }
+
+    private void validatePrice(double value, String field) throws IllegalArgumentException {
+        if (value <= 0) {
+            throw new IllegalArgumentException(field + " is less or equal than zero.");
+        }
+    }
+
+
 }
