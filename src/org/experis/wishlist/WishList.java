@@ -58,6 +58,7 @@ public class WishList {
 
             }
         }
+        scanner.close();
         //ordina la lista
         Collections.sort(presents);
         //stampa la lista ordinata
@@ -65,6 +66,7 @@ public class WishList {
         for(Present present : presents){
             System.out.println(present);
         }
+
 
         //controllare se il salvataggio va a buon fine
         if(!writeToFile(presents)){
@@ -80,7 +82,8 @@ public class WishList {
         boolean written = false;
         try(FileWriter writer = new FileWriter(presentFile, false)){
             for (Present present : presents){
-                writer.write(present.getName() + "," + present.getPrice() + "\n");
+                //punto e virgola come delitatore invece di virgola semplice
+                writer.write(present.getName() + ";" + present.getPrice() + "\n");
             }
             written = true;
         }catch (IOException e){
@@ -101,7 +104,7 @@ public class WishList {
             while (scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 //divide la linea in parti (CSV)
-                String[] parts = line.split(",");
+                String[] parts = line.split(";");
                 //controlla se la linea è formattata correttamente
                 if(parts.length == 2){
                     //estrae ed analizza i dati

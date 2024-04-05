@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f778826-a964-423b-8975-19cae4b25f19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/experis/wishlist/Present.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/experis/wishlist/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/experis/wishlist/WishList.java" afterDir="false" />
     </list>
